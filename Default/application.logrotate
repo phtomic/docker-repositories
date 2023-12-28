@@ -1,0 +1,7 @@
+/var/log/<application>/*.{log,yaml} {
+    daily
+    rotate 30
+    compress
+    delaycompress
+    dateext
+}
