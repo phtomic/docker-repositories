@@ -1,16 +1,16 @@
 # <application> Dockerfile #
 ############################
 FROM node:18-slim
-RUN npm install -g --unsafe-perm genieacs@1.2.9
 RUN npm install pm2 -g
-RUN useradd --system --no-create-home --user-group genieacs
 RUN mkdir -p /var/log/<application>
 ADD application.logrotate /etc/logrotate.d/<application>
 ADD <base_application> /opt/base
-ADD <base_application> /<application>
-RUN ln -s /<application> /opt/<application>
-RUN chown genieacs:genieacs /opt/genieacs/ext
+
+
 #SYMLINKs
+
+
+
 
 ADD run_with_env.sh /usr/bin/run_with_env.sh
 ADD entrypoint.sh /usr/bin/entrypoint.sh

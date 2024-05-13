@@ -1,0 +1,7 @@
+/var/log/mechanic-proxy/*.{log,yaml} {
+    daily
+    rotate 30
+    compress
+    delaycompress
+    dateext
+}
